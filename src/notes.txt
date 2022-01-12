@@ -1,0 +1,5 @@
+red overlay of image that is active or selected 90% opacity
+arrows centered vert and hor
+
+make the buttons work... continued
+static key word in class definition and how to use

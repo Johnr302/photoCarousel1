@@ -1,0 +1,101 @@
+.photoCarousel {
+  margin-top: 100px;
+  display: flex;
+  /* width: 250px; */
+  height: 250px;
+  justify-content: center;
+  align-items: center;
+}
+.photoCarousel #display {
+  border: 1px solid;
+  height: 100%;
+  width: 375px;
+  border-radius: 8px;
+  background-size: cover;
+}
+
+.pictures {
+  display: flex;
+  margin-top: 15px;
+  width: 100%;
+  height: 120px;
+  justify-content: center;
+}
+
+.overlay {
+  height: 120px;
+  width: 120px;
+  margin: 0 5px;
+  border: 3px solid black;
+  border-radius: 8px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.activeBg {
+  background: rgba(230, 37, 37);
+}
+
+.pictures img {
+  height: 100%;
+  width: 100%;
+}
+
+.pictures img:hover {
+  cursor: pointer;
+}
+
+.activeImg {
+  filter: grayscale(100);
+  opacity: 0.5;
+}
+
+.arrowContainer {
+  border-radius: 2px;
+  height: 100%;
+  display: flex;
+  z-index: 2;
+  align-items: center;
+  justify-content: center;
+  border: 1px;
+  width: 70px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  color: 0, 0, 0, (0);
+}
+
+.arrowContainer:hover {
+  border-color: black;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.arrowContainer:hover > .arrow {
+  border-color: black;
+}
+
+.rightContainer {
+  padding-right: 6px;
+  margin-left: -78px;
+  border-radius: 0 8px 8px 0;
+}
+.leftContainer {
+  padding-left: 3px;
+  margin-right: -75px;
+  border-radius: 8px 0 0 8px;
+}
+
+.arrow {
+  border: solid rgba(0, 0, 0, 0);
+  border-width: 0 3px 3px 0;
+  padding: 3px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
