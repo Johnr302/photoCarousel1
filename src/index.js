@@ -16,7 +16,16 @@ const loadImages = () => {
 
 loadImages();
 
-const checkId = () => {};
+const activeImage = () => {
+  for (const element of selectedImg) {
+    if (Number(element.id) === selectedTargetID) {
+      element.classList.add("activeImg");
+      element.parentElement.classList.add("activeBg");
+    }
+  }
+};
+
+activeImage();
 
 leftArrow.onclick = () => {
   removeClass();
@@ -27,7 +36,9 @@ leftArrow.onclick = () => {
     selectedTargetID = 3;
     displayImg.src = images[selectedTargetID - 1];
   }
+  activeImage();
 };
+
 rightArrow.onclick = () => {
   removeClass();
   let index = selectedTargetID - 1;
@@ -37,20 +48,18 @@ rightArrow.onclick = () => {
     selectedTargetID = 1;
     displayImg.src = images[selectedTargetID - 1];
   }
+  activeImage();
 };
 
 for (const element of selectedImg) {
   element.onclick = (element, selectedTarget) => {
     removeClass();
     selectedTarget = element.currentTarget;
-    let selectedSrc = selectedTarget.src;
-    displayImg.src = selectedSrc;
-    selectedTarget.classList.add("activeImg");
-    selectedTarget.parentElement.classList.add("activeBg");
     selectedTargetID = Number(selectedTarget.id);
+    displayImg.src = images[selectedTargetID - 1];
+    activeImage();
   };
 }
-// document.getElementById("myImg").src = "hackanm.gif"
 const removeClass = () => {
   for (const element of selectedImg) {
     element.classList.remove("activeImg");
