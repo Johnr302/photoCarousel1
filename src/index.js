@@ -12,8 +12,8 @@ const setImageSrc = (number) => {
 };
 
 const loadImages = () => {
-  for (let i = 0; i < thumbnailElements.length; i++) {
-    thumbnailElements[i].src = images[i];
+   for (const [index, element] of thumbnailElements.entries()) {
+    element.src = images[index];
   }
   displayImg.src = setImageSrc(1);
 };
@@ -53,12 +53,12 @@ rightArrow.onclick = () => {
   activeImage();
 };
 
-for (const element of thumbnailElements) {
+for (const [index, element] of thumbnailElements.entries()) {
   element.onclick = (element, selectedTarget) => {
     removeClass();
     selectedTarget = element.currentTarget;
     selectedTargetID = Number(selectedTarget.id);
-    displayImg.src = setImageSrc(1);
+    displayImg.src = images[index];
     activeImage();
   };
 }
