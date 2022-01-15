@@ -7,15 +7,15 @@ const rightArrow = document.getElementById("rightArrow");
 
 let selectedTargetID = 1;
 
-const setImageSrc = (number) => {
-  return images[selectedTargetID - number];
+const setImageSrc = () => {
+  return images[selectedTargetID - 1];
 };
 
 const loadImages = () => {
-   for (const [index, element] of thumbnailElements.entries()) {
+  for (const [index, element] of thumbnailElements.entries()) {
     element.src = images[index];
   }
-  displayImg.src = setImageSrc(1);
+  displayImg.src = setImageSrc();
 };
 
 loadImages();
@@ -33,22 +33,24 @@ activeImage();
 
 leftArrow.onclick = () => {
   removeClass();
-  displayImg.src = setImageSrc(2);
   selectedTargetID--;
   if (selectedTargetID === 0) {
     selectedTargetID = 3;
-    displayImg.src = setImageSrc(1);
+    displayImg.src = setImageSrc();
+  } else {
+    displayImg.src = setImageSrc();
   }
   activeImage();
 };
 
 rightArrow.onclick = () => {
   removeClass();
-  displayImg.src = setImageSrc(0);
   selectedTargetID++;
   if (selectedTargetID === 4) {
     selectedTargetID = 1;
-    displayImg.src = setImageSrc(1);
+    displayImg.src = setImageSrc();
+  } else {
+    displayImg.src = setImageSrc();
   }
   activeImage();
 };
