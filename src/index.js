@@ -38,7 +38,7 @@ const selectThumbnail = () => {
 
 selectThumbnail();
 
-const removeClass = () => {
+const removeThumbnailHighlight = () => {
   for (const element of thumbnailElements) {
     element.classList.remove("activeImg");
     element.parentElement.classList.remove("activeBg");
