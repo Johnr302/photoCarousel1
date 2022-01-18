@@ -15,7 +15,7 @@ const loadImages = () => {
   for (const [index, element] of thumbnailElements.entries()) {
     element.src = images[index];
     element.onclick = (element, selectedTarget) => {
-      removeClass();
+      removeThumbnailHighlight();
       selectedTarget = element.currentTarget;
       selectedTargetID = Number(selectedTarget.id);
       displayImg.src = images[index];
@@ -46,7 +46,7 @@ const removeClass = () => {
 };
 
 const arrowHandler = () => {
-  removeClass();
+  removeThumbnailHighlight();
   if (selectedTargetID === 0) {
     selectedTargetID = 3;
   }
